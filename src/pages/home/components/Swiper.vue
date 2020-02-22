@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-      <swiper-slide>
+      <swiper-slide >
         <img class="swiper-img" src="@/assets/images/swiper_one.png" />
       </swiper-slide>
       <swiper-slide>
