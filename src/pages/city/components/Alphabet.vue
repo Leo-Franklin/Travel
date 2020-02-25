@@ -52,11 +52,11 @@ export default {
           clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
-        const touchY = e.touches[0].clientY - 74
-        const index = Math.floor((touchY - this.startY) / 21.78)
-        if (index >= 0 && this.letters.length) {
-          this.$emit('change', this.letters[index])
-        }
+          const touchY = e.touches[0].clientY - 74
+          const index = Math.floor((touchY - this.startY) / 21.78)
+          if (index >= 0 && this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
         }, 16)
       }
     },
