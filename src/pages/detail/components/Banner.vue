@@ -3,20 +3,20 @@
     <div class="banner" @click="handleBannerClick">
       <img
         class="banner-img"
-        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582740406448&di=bbd9cb9999aece8c988020f836b7cae6&imgtype=0&src=http%3A%2F%2Fimages4.c-ctrip.com%2Ftarget%2Ffd%2Ftuangou%2Fg2%2FM05%2F5D%2F09%2FCghzgVSqIPCAZ1KUAAJclE8rfX8596_720_480_s.jpg"
+        :src="bannerImg"
       />
       <div class="banner-info">
         <div class="banner-tittle">
-          八达岭长城(AAAAA景区)
+          {{this.sightName}}
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe674;</span>
-          39
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleGallaryClose"
     >
@@ -28,10 +28,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'Detail',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582807238102&di=ea6f9bf3697a7dc6e7997ee35a6edb95&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F07%2F23%2F6b75229ba2752e24a2ec873bbaaa48d6.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582807238102&di=ea6f9bf3697a7dc6e7997ee35a6edb95&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F07%2F23%2F6b75229ba2752e24a2ec873bbaaa48d6.jpg']
+      showGallary: false
     }
   },
   methods: {
